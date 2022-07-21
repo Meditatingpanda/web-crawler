@@ -13,9 +13,7 @@ app.get('/api/', async (req, res, next) => {
         const response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CX}&q=${req.query.q}&num=2`);
         console.log(response.data.items[0].link);
         console.log(response.data.items[0].displayLink);
-        const browser = await puppeteer.launch({
-            headless: false,
-        });
+        const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.setRequestInterception(true);
 
