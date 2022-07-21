@@ -17,9 +17,10 @@ const bot = async (url) => {
     const grabCode = await page.evaluate(() => {
         const allTags = document.querySelectorAll('.code-container');
         const lan = document.querySelectorAll('.tabtitle')
+        console.log(lan)
         let data = []
         allTags.forEach((ele, i) => {
-            data.push({ code: ele.innerText, lan: lan[i].innerText })
+            data.push({ code: ele.innerText, lan: lan[i] && lan[i].innerText })
         })
 
         return data;
