@@ -15,13 +15,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "puppeteer": "^15.4.0",
-    "puppeteer-core": "^15.4.0"
+    "puppeteer": "^15.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  },
-  "engines": {
-    "node": "16.13.2"
   }
 }
