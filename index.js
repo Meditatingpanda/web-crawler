@@ -32,8 +32,8 @@ app.get('/api/', async (req, res, next) => {
         })
         console.log('scrapping done!!')
         res.send(grabCode);
-        // await page.close();
-        // await browser.close();
+        await page.close();
+        await browser.close();
         next();
     } catch (error) {
         next(error)
