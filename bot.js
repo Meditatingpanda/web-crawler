@@ -1,11 +1,6 @@
 const puppeteer = require('puppeteer');
 const bot = async (url) => {
-    const browser = await puppeteer.launch({
-        headless: true, 'args': [
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ]
-    });
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox']});
     const page = await browser.newPage();
     await page.setRequestInterception(true);
     //if the page makes a  request to a resource type of image or stylesheet then abort that request

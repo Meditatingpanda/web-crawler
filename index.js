@@ -8,7 +8,7 @@ const cors = require('cors');
 const bot = require('./bot');
 app.use(cors())
 
-app.get('/api/', async (req, res, next) => {
+app.get('/', async (req, res, next) => {
     try {
         const response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CX}&q=${req.query.q}&num=2`);
         console.log(response.data.items[0].link);
